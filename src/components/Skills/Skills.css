@@ -1,0 +1,259 @@
+/* Skills Section */
+.skills-section {
+  padding: 100px 0;
+  background-color: #f8f9fa;
+  position: relative;
+  overflow: hidden;
+}
+
+.dark-mode .skills-section {
+  background-color: #121212;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.dark-mode .section-header h2 {
+  color: #fff;
+}
+
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background: #ff4d4d;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-header p {
+  color: #666;
+  font-size: 1.1rem;
+  margin-top: 20px;
+}
+
+.dark-mode .section-header p {
+  color: #a0a0a0;
+}
+
+/* Skills Container */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* Skill Category */
+.skill-category {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .skill-category {
+  background: #1e1e1e;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.skill-category-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.dark-mode .skill-category-header {
+  border-color: #2a2a2a;
+}
+
+.skill-category-icon {
+  width: 50px;
+  height: 50px;
+  background: #ffebee;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff4d4d;
+  font-size: 1.2rem;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.skill-category h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.dark-mode .skill-category h3 {
+  color: #f0f0f0;
+}
+
+/* Skill Items */
+.skill-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skill-item {
+  margin-bottom: 15px;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.skill-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  color: #333;
+}
+
+.dark-mode .skill-name {
+  color: #f0f0f0;
+}
+
+.skill-icon {
+  color: #ff4d4d;
+  font-size: 1.1rem;
+  width: 20px;
+  text-align: center;
+}
+
+.skill-name {
+  flex-grow: 1;
+  font-size: 0.95rem;
+  color: #444;
+  font-weight: 500;
+}
+
+.skill-percent {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 600;
+  min-width: 40px;
+  text-align: right;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #4b6cb7, #182848);
+  border-radius: 4px;
+  transition: width 1s ease-in-out;
+}
+
+/* Animation for skill bars */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.skill-progress {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1024px) {
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .skills-section {
+    padding: 60px 0;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .skills-container {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .skill-category {
+    padding: 25px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .skills-section {
+    padding: 50px 0;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .skill-category-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .skill-category-icon {
+    margin: 0 0 15px 0;
+  }
+  
+  .skill-category h3 {
+    font-size: 1.3rem;
+  }
+  
+  .skill-name {
+    font-size: 0.9rem;
+  }
+  
+  .skill-percent {
+    font-size: 0.8rem;
+  }
+}
